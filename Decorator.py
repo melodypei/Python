@@ -8,7 +8,7 @@ import functools
 
 def timeIt(func):
     @functools.wraps(func)
-    def wrap(arg):
+    def wrap(*arg，**kwargs):
         start = datetime.datetime.now()
         func(arg)
         end = datetime.datetime.now()
