@@ -8,13 +8,13 @@ import functools
 
 def timeIt(func):
     @functools.wraps(func)
-    def warp(arg):
+    def wrap(arg):
         start = datetime.datetime.now()
         func(arg)
         end = datetime.datetime.now()
         cost = end - start
         print( 'execute %s spend %s'  % (func.__name__,cost.total_seconds()))
-    return warp
+    return wrap
 
 @timeIt
 def func2(arg):
