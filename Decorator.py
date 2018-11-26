@@ -10,7 +10,7 @@ def timeIt(func):
     @functools.wraps(func)
     def wrap(*arg，**kwargs):
         start = datetime.datetime.now()
-        func(arg)
+        func(*arg，**kwargs)
         end = datetime.datetime.now()
         cost = end - start
         print( 'execute %s spend %s'  % (func.__name__,cost.total_seconds()))
