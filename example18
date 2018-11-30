@@ -1,0 +1,33 @@
+# -*- coding: UTF-8 -*-
+
+from functools import reduce
+
+m= 0
+
+n = []
+
+a = int(input("qingshuru:"))
+b = int(input("qingshuru:"))
+
+for i in range(a):
+    m += b
+    b = b * 10
+    n.append(m)
+    print(n[i])
+
+
+print(reduce(lambda x,y:x+y,n))
+
+
+
+
+
+
+    
+
+
+            
+    
+    
+
+
