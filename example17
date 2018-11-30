@@ -1,0 +1,37 @@
+# -*- coding: UTF-8 -*-
+
+
+
+import string
+s = input("qingshuru:")
+letters = 0
+space =0
+digit =0
+others=0
+
+i =0
+
+##while i < len(s):
+##    if s[i].isalpha():
+##        letters +=1
+##    elif s[i].isspace():
+##        space += 1
+##    elif s[i].isdigit():
+##        digit += 1
+##    else:
+##        others +=1
+##    i += 1
+
+for i in range(len(s)):
+    if s[i].isalpha():
+        letters +=1
+    elif s[i].isspace():
+        space += 1
+    elif s[i].isdigit():
+        digit += 1
+    else:
+        others +=1   
+
+
+
+print ("char = %d,space=%d,digit = %d,others = %d" % (letters,space,digit,others))
