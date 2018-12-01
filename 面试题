@@ -1,0 +1,55 @@
+# -*- coding: UTF-8 -*-
+
+#统计A字符串在B字符串中出现的次数
+def strcount(str1,str2):
+    li = str2.split()
+    count = 0
+    for i in range(len(li)):
+        if li[i].find(str1) != -1:
+            count += 1
+    return count
+print(strcount('abc','abcd   abcde   wert  dfgji   abckkk'))
+
+#一行代码实现删除列表中重复的值
+
+a=[1,2,4,2,4,5,6,5,7,8,9,0]
+
+print(list(set(a)))
+
+
+#如何用一行代码生成[1,4,9,16,25,36,49,64,81,100]
+
+print([i*i for i in range(1,11)])
+
+
+#如何实现 “1,2,3” 变成 [‘1’,’2’,’3’]
+
+s = "1,2,3"
+
+l = s.split(',')
+
+print(l)
+
+#如何实现[‘1’,’2’,’3’]变成[1,2,3]
+
+l1 = ['1','2','3']
+l2 = []
+
+for i in l:
+    l2.append(int(i))
+print(l2)
+
+#求结果：  a. [ i % 2 for i in range(10) ]  b. ( i % 2 for i in range(10) )
+
+print([ i % 2 for i in range(10) ])#[0,1,0,1,0,1,0,1,0,1]
+print( i % 2 for i in range(10) ) #<generator object <genexpr> at 0x026B3BF0>
+
+
+#一行代码实现9*9乘法表
+print ("\n".join("\t".join(["%s*%s=%s" %(x,y,x*y) for y in range(1, x+1)]) for x in range(1, 10)))
+
+#求结果
+def num():
+    return [lambda x : i*x for i in range(4)]
+
+print([m(5) for m in num()])
