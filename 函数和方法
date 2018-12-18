@@ -1,0 +1,13 @@
+from types import MethodType,FunctionType
+
+class Foo(object):
+    def fetch(self):
+        pass
+Foo.fetch   #此时fetch为函数
+print(isinstance(Foo.fetch,MethodType))
+print(isinstance(Foo.fetch,FunctionType)) # True
+
+obj = Foo()
+obj.fetch  #此时fetch为方法
+print(isinstance(obj.fetch,MethodType)) # True
+print(isinstance(obj.fetch,FunctionType))
