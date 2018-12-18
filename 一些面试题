@@ -4,8 +4,9 @@
 def strcount(str1,str2):
     li = str2.split()
     count = 0
-    for i in range(len(li)):
-        if li[i].find(str1) != -1:
+    for i in li:
+        if str1 in i:
+        #if i.find(str1) != -1:
             count += 1
     return count
 print(strcount('abc','abcd   abcde   wert  dfgji   abckkk'))
