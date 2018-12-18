@@ -47,5 +47,9 @@ print('\n'.join([' '.join(['%s*%s=%-2s' %(j,i,i*j) for j in range(1, i+1)]) for 
 #求结果
 def num():
     return [lambda x : i*x for i in range(4)]
-
+'''
+应用到闭包函数：
+当调用函数的时候，都会优先在外部作用域中查找i变量，这时列表生产式中循环立马执行，最后i赋值为3
+'''
 print([m(5) for m in num()])
+
