@@ -10,12 +10,6 @@ def strcount(str1,str2):
     return count
 print(strcount('abc','abcd   abcde   wert  dfgji   abckkk'))
 
-#一行代码实现删除列表中重复的值
-
-a=[1,2,4,2,4,5,6,5,7,8,9,0]
-
-print(list(set(a)))
-
 
 #如何用一行代码生成[1,4,9,16,25,36,49,64,81,100]
 
