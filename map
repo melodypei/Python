@@ -1,0 +1,15 @@
+# -*- coding: UTF-8 -*-
+
+
+numbers = [1,2,3,4,5,6,7]
+squares = map(lambda x:x*x,numbers)
+print(type(squares))
+print(squares)
+print(list(squares))
+
+
+'''
+<class 'map'>
+<map object at 0x02264F70>
+[1, 4, 9, 16, 25, 36, 49]
+'''
