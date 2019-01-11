@@ -53,3 +53,36 @@ def num():
 '''
 print([m(5) for m in num()])
 
+'''
+自动化测试http送礼接口
+请求格式
+https://192.168.0.1/sendGift.htm?parameter={"AVID":1006575,"giftCount":1,
+"giftID":5000126,"toUserID":900713489,"userID":900003367}
+&t=1522750524013&k=16kjk452hkjhk4j5lkj5879879879
+t:当前时间毫秒数
+K：校验串，校验串加密规则Md5（authenCode+time+text+key）
+其中：authenCode：X-Token;
+time:与请求中的t相同的时间戳；
+text：url中parameter={xxx}的部分，包含parameter=；
+key：1234567890
+请求方式：get
+请写代码调用测试送礼接口，代码不限。
+'''
+
+# -*- coding: UTF-8 -*-
+
+import time
+import json
+import requests
+import hashlib   
+
+t = int(time.time() * 1000)
+d = {"AVID":1006575,"giftCount":1,"giftID":5000126,"toUserID":900713489,"userID":900003367}
+dd = json.dumps(d)
+text = "parameter="+dd
+src = "X-Token"+str(t)+text+"1234567890"
+m = hashlib.md5()
+m.update(src.encode('utf-8'))
+k = m.hexdigest()
+params = {'parameter':text, 't':t,'k':k}
+r = requests.get('https://192.168.0.1/sendGift.htm', params)
