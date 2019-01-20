@@ -1,5 +1,9 @@
 # -*- coding: UTF-8 -*-
 
+'''
+随机生成500个激活码，格式如下：XXXX-XXXX-XXXX-XXXX，每一位是数字或者大写英文字母。
+'''
+
 import random
 
 
