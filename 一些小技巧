@@ -1,0 +1,75 @@
+# -*- coding: UTF-8 -*-
+
+
+##TrueFalse当数字用
+MAXIMUM = lambda x,y :  (x > y) * x + (x < y) * y
+MINIMUM = lambda x,y :  (x > y) * y + (x < y) * x
+ 
+if __name__ == '__main__':
+    a = 10
+    b = 20
+    print ('The largar one is %d' % MAXIMUM(a,b))
+    print ('The lower one is %d' % MINIMUM(a,b))
+    
+
+##列表的值分别存入变量
+>>> a = [1, 2, 3]
+>>> x, y, z = a 
+>>> x
+1
+>>> y
+2
+>>> z
+3
+
+##字符串乘以数字
+>>> print "code"*4+' '+"mentor"*5
+codecodecodecode mentormentormentormentormentor
+
+##合并二维数组
+a = [[1, 2], [3, 4], [5, 6]]
+>>> import itertools 
+>>> list(itertools.chain.from_iterable(a))
+[1, 2, 3, 4, 5, 6]
+
+##判断两个字符串是不是anagrams
+from collections import Counter
+def is_anagram(str1, str2):
+     return Counter(str1) == Counter(str2)
+>>> is_anagram('abcd','dbca')
+True
+>>> is_anagram('abcd','dbaa')
+False
+
+##输入N个数字返回list
+result = map(lambda x:int(x) ,input().split())
+print(list(result))
+1 2 3 4 5
+>>>[1, 2, 3, 4, 5]
+
+##
+a = 'qwer'
+l = list(a)
+print(l)##['q', 'w', 'e', 'r']
+
+
+##list转化为dict
+i = ['a', 'b']
+l = [1, 2]
+print dict([i,l])##{'a': 'b', 1: 2}
+
+##
+>>> mat = [[1, 2, 3], [4, 5, 6]]
+>>> zip(*mat)
+[(1, 4), (2, 5), (3, 6)]
+
+##
+List 1 = ['a', 'b', 'c', 'd']
+List 2 = ['p', 'q', 'r', 's']
+>>> for x, y in zip(list1,list2):
+...    print x, y
+...
+a p
+b q
+c r
+d s
