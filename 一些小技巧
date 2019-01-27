@@ -10,7 +10,10 @@ if __name__ == '__main__':
     b = 20
     print ('The largar one is %d' % MAXIMUM(a,b))
     print ('The lower one is %d' % MINIMUM(a,b))
-    
+
+#判断列表为空
+a = []
+print(not a)#True
 
 ##列表的值分别存入变量
 >>> a = [1, 2, 3]
