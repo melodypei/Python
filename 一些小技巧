@@ -55,6 +55,10 @@ a = 'qwer'
 l = list(a)
 print(l)##['q', 'w', 'e', 'r']
 
+#两个list相加
+l1 = ['aa','ss']
+l2 = ['cc','dd']
+print(l1+l2)#['aa', 'ss', 'cc', 'dd']
 
 ##list转化为dict
 i = ['a', 'b']
