@@ -4,6 +4,8 @@
 ##TrueFalse当数字用
 MAXIMUM = lambda x,y :  (x > y) * x + (x < y) * y
 MINIMUM = lambda x,y :  (x > y) * y + (x < y) * x
+
+list.append(obj): 将obj作为一个整体添加到list列表中(末尾) obj为任意数据类型
  
 if __name__ == '__main__':
     a = 10
