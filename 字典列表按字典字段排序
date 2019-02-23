@@ -1,0 +1,23 @@
+# -*- coding: UTF-8 -*-
+
+
+'''
+字典列表，根据某个或某几个字典字段来排序这个列表
+'''
+
+from operator import itemgetter
+
+rows = [{'name':'tom','age':16},
+        {'name':'mike','age':13},
+        {'name':'lily','age':18},
+        {'name':'lucy','age':15}]
+
+
+sorted(rows,key = lambda item:item['age'])
+
+rows_by_age = sorted(rows,key=itemgetter('age'))
+
+print(rows)
+print(rows_by_age)
+print(sorted(rows,key = lambda item:item['age']))
+
