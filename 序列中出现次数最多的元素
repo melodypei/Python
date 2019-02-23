@@ -1,0 +1,24 @@
+# -*- coding: UTF-8 -*-
+
+
+'''
+找出一个序列中出现次数最多的元素
+'''
+
+from   collections import Counter
+
+
+words = ['book','movie','music','cut','look','book','cut','book','movie',
+         'the','man','the','look','love','plus','man','cut','cut']
+word_counts = Counter(words)
+
+top_three = word_counts.most_common(3)
+
+print(word_counts)
+print(top_three)
+print(word_counts['cut'])
+
+
+Counter({'cut': 4, 'book': 3, 'movie': 2, 'look': 2, 'the': 2, 'man': 2, 'music': 1, 'love': 1, 'plus': 1})
+[('cut', 4), ('book', 3), ('movie', 2)]
+4 
