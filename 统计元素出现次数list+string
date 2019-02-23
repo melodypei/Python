@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-
 '''
 找出一个序列中出现次数最多的元素
 '''
@@ -22,3 +21,26 @@ print(word_counts['cut'])
 Counter({'cut': 4, 'book': 3, 'movie': 2, 'look': 2, 'the': 2, 'man': 2, 'music': 1, 'love': 1, 'plus': 1})
 [('cut', 4), ('book', 3), ('movie', 2)]
 4 
+
+'''
+统计字符串中每个字符出现的次数
+'''
+
+str="aaaaabbbbcccdde"
+
+dic = {}
+
+for i in str:
+    if i in dic:
+        continue
+    else:
+        dic[i] = str.count(i)
+
+print(dic)
+
+from collections import Counter
+res = Counter(str)
+print(res)
+
+{'a': 5, 'b': 4, 'c': 3, 'd': 2, 'e': 1}
+Counter({'a': 5, 'b': 4, 'c': 3, 'd': 2, 'e': 1})
