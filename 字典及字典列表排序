@@ -1,0 +1,36 @@
+# -*- coding: UTF-8 -*-
+
+d= {'a':24,'e':52,'d':12,'b':33}
+
+d1 = sorted(d.items(),key=lambda x:x[1])
+d2 = sorted(d.items(),key=lambda x:x[0])
+
+d3 = sorted(zip(d.values(),d.keys()))
+
+
+print(dict(d1))
+print(dict(d2))
+print(dict(d3))
+
+##{'d': 12, 'a': 24, 'b': 33, 'e': 52}
+##{'a': 24, 'b': 33, 'd': 12, 'e': 52}
+##{12: 'd', 24: 'a', 33: 'b', 52: 'e'}
+
+rows = [
+{'fname': 'Brian', 'lname': 'Jones', 'uid': 1003},
+{'fname': 'David', 'lname': 'Beazley', 'uid': 1002},
+{'fname': 'John', 'lname': 'Cleese', 'uid': 1001},
+{'fname': 'Big', 'lname': 'Jones', 'uid': 1004}
+]
+
+from operator import itemgetter
+
+rows_by_fname = sorted(rows, key=itemgetter('fname'))
+rows_by_uid = sorted(rows, key=itemgetter('uid'))
+
+rows_by_fname = sorted(rows, key=lambda r: r['fname'])
+rows_by_lfname = sorted(rows, key=lambda r: (r['lname'],r['fname']))
+
+print(rows_by_fname)
+print(rows_by_uid)
+print(rows_by_lfname)
