@@ -37,7 +37,7 @@ print( i % 2 for i in range(10) ) #<generator object <genexpr> at 0x026B3BF0>
 print ("\n".join("\t".join(["%s*%s=%s" %(x,y,x*y) for y in range(1, x+1)]) for x in range(1, 10)))
 print('\n'.join([' '.join(['%s*%s=%-2s' %(j,i,i*j) for j in range(1, i+1)]) for i in range(1, 10)]))
 
-
+'''
 自动化测试http送礼接口
 请求格式
 https://192.168.0.1/sendGift.htm?parameter={"AVID":1006575,"giftCount":1,
