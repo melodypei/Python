@@ -37,16 +37,7 @@ print( i % 2 for i in range(10) ) #<generator object <genexpr> at 0x026B3BF0>
 print ("\n".join("\t".join(["%s*%s=%s" %(x,y,x*y) for y in range(1, x+1)]) for x in range(1, 10)))
 print('\n'.join([' '.join(['%s*%s=%-2s' %(j,i,i*j) for j in range(1, i+1)]) for i in range(1, 10)]))
 
-#求结果
-def num():
-    return [lambda x : i*x for i in range(4)]
-'''
-应用到闭包函数：
-当调用函数的时候，都会优先在外部作用域中查找i变量，这时列表生产式中循环立马执行，最后i赋值为3
-'''
-print([m(5) for m in num()])
 
-'''
 自动化测试http送礼接口
 请求格式
 https://192.168.0.1/sendGift.htm?parameter={"AVID":1006575,"giftCount":1,
