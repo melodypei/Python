@@ -26,23 +26,27 @@ Counter({'cut': 4, 'book': 3, 'movie': 2, 'look': 2, 'the': 2, 'man': 2, 'music'
 统计字符串中每个字符出现的次数
 '''
 
-str="aaaaabbbbcccdde"
+message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
 
-dic = {}
+count = {}
 
-for i in str:
-    if i in dic:
+for i in message:
+    if i in count:
         continue
     else:
-        dic[i] = str.count(i)
+        count[i] = message.count(i)
 
-for i in str:
+for i in message:
     if i  not in dic:
-        dic[i] = 1
+        count[i] = 1
     else:
-        dic[i] += 1
+        count[i] += 1
+  
+for character in message:
+    count.setdefault(character, 0)
+    count[character] = count[character] + 1
 
-print(dic)
+print(count)
 
 from collections import Counter
 res = Counter(str)
