@@ -1,5 +1,9 @@
 # -*- coding: UTF-8 -*-
 
+In [1]: '{:<08d}'.format(190)
+Out[1]: '19000000'
+In [2]: '{:>08d}'.format(190)
+Out[2]: '00000190'
 
 ##TrueFalse当数字用
 MAXIMUM = lambda x,y :  (x > y) * x + (x < y) * y
