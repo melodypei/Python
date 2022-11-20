@@ -5,6 +5,13 @@ Out[1]: '19000000'
 In [2]: '{:>08d}'.format(190)
 Out[2]: '00000190'
 
+d = {'a':5,'b':4,'d':8,'c':1,'e':4}
+sorted(d.items(),key=lambda x:(-x[1],x[0]))
+-x[1]表示先对值按照逆序排序，x[0]表示再对键按照正序排序
+L = [(1,2,3,4),(5,4,6,7),(4,8,2,1)]
+sorted(L.items(),key=lambda x:(x[0],x[1],x[2],x[3]))
+分别基于第一、二、三、四个元素进行正序排序
+
 ##TrueFalse当数字用
 MAXIMUM = lambda x,y :  (x > y) * x + (x < y) * y
 MINIMUM = lambda x,y :  (x > y) * y + (x < y) * x
