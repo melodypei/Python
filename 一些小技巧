@@ -1,5 +1,12 @@
 # -*- coding: UTF-8 -*-
 
+学习吧，不要害怕，不要迷茫。但你一定要在路上一直的走下去，尽管可能停滞不前，但也要走。
+
+None是一个对象，而NULL是一个类型。
+Python中没有NULL，只有None，None有自己的特殊类型NoneType。
+None不等于0、任何空字符串、False等。
+在Python中，None、False、0、""(空字符串)、、()(空元组)、{}(空字典)都相当于False。
+
 In [1]: '{:<08d}'.format(190)
 Out[1]: '19000000'
 In [2]: '{:>08d}'.format(190)
