@@ -1,0 +1,94 @@
+###局部最小值
+import random
+from typing import Any, Union
+
+
+def getLessIndex(arr):
+    n = len(arr)
+    if not arr or n == 0:
+        return -1
+    if n == 1 or arr[0] < arr[1]:
+        return 0
+    if arr[n - 1] < arr[n - 2]:
+        return n - 1
+    left = 1
+    right = n - 2
+    mid = 0
+    while left < right:
+        mid = (left + right) // 2
+        if arr[mid] > arr[mid - 1]:
+            right = mid - 1
+        elif arr[mid] > arr[mid + 1]:
+            left = mid + 1
+        else:
+            return mid
+    return left
+
+
+def oneMinIndex(arr):
+    n = len(arr)
+    if not arr or n == 0:
+        return -1
+    if n == 1 or arr[0] < arr[1]:
+        return 0
+    if arr[n - 1] < arr[n - 2]:
+        return n - 1
+    L = 1
+    R = n - 2
+    while L < R - 1:
+        mid = (L + R) // 2
+        if arr[mid] < arr[mid - 1] and arr[mid] < arr[mid + 1]:
+            return mid
+        elif arr[mid] > arr[mid - 1]:
+            R = mid - 1
+        else:
+            L = mid + 1
+    return L if arr[L] < arr[R] else R
+
+
+# 验证得到的结果，是不是局部最小
+def isRight(arr, index):
+    n = len(arr)
+    if n <= 1:
+        return True
+    if index == 0:
+        return arr[index] < arr[index + 1]
+    if index == n - 1:
+        return arr[index] < arr[index - 1]
+    return arr[index] < arr[index - 1] and arr[index] < arr[index + 1]
+
+
+# 为了测试
+# 生成相邻不相等的数组
+def generateRandomArray(maxSize, maxValue):
+    l = int(random.random() * maxSize) + 5
+    # print("l的值是"+str(l))
+    arr = [0 for i in range(l)]
+    arr[0] = int(random.random() * (maxValue + 2)) - int(random.random() * (maxValue + 1))
+    i = 1
+    while i < l:
+        arr[i] = int(random.random() * (maxValue + 6)) - int(random.random() * (maxValue + 4))
+        if arr[i] == arr[i - 1]:
+            continue
+        else:
+            i += 1
+    return arr
+
+
+# 为了测试
+if __name__ == '__main__':
+    testTime = 500000
+    maxSize = 30
+    maxValue = 100
+    print("测试开始")
+    for i in range(testTime):
+        arr = generateRandomArray(maxSize, maxValue)
+        ans1 = oneMinIndex(arr)
+        ans2 = getLessIndex(arr)
+        if not isRight(arr, ans1) or (not isRight(arr, ans2)):
+            print("出错了！")
+            print('这是第几次运行：' + str(i))
+            print(arr)
+            print(ans)
+            break
+    print("测试结束")
