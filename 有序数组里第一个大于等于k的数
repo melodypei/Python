@@ -1,0 +1,68 @@
+import random
+
+
+# 在arr上，找满足 >= value的最左位置
+def nearestIndex(arr, value):
+    n = len(arr)
+    L = 0
+    R = n - 1
+    index = -1  # 记录最左的对号
+    while L <= R:  # 至少一个数的时候
+        mid = L + ((R - L) >> 1)
+        if arr[mid] >= value:
+            index = mid
+            R = mid - 1
+        else:
+            L = mid + 1
+    return index
+
+
+def GetIndexOfK(data, k):
+    n = len(data)
+    l = 0
+    r = n - 1
+    k = k-0.5
+    while l <= r:
+        m = (l + r) // 2
+        if data[m] > k:
+            r = m - 1
+        elif data[m] < k:
+            l = m + 1
+    return l if l <n else -1
+
+
+# for test
+def check(arr, value):
+    n = len(arr)
+    for i in range(n):
+        if arr[i] >= value:
+            return i
+    return -1
+
+
+# for test
+def generateRandomArray(maxSize, maxValue):
+    l = int(random.random() * maxSize) + 5
+    arr = [0 for i in range(l)]
+    for i in range(l):
+        arr[i] = int(random.random() * (maxValue + 6)) - int(random.random() * (maxValue + 4))
+    return arr
+
+
+if __name__ == '__main__':
+    testTime = 50000
+    maxSize = 30
+    maxValue = 100
+    succeed = True
+    for i in range(testTime):
+        arr = generateRandomArray(maxSize, maxValue)
+        arr.sort()
+        value = int(random.random() * (maxValue + 2)) - int(random.random() * (maxValue + 1))
+        if check(arr, value) != GetIndexOfK(arr, value):
+            print(arr)
+            print(value)
+            print(check(arr, value))
+            print(GetIndexOfK(arr, value))
+            succeed = False
+            break
+    print("Nice!" if succeed else "Fucking fucked!")
