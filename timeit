@@ -1,0 +1,35 @@
+from timeit import timeit
+
+ll = [i for i in range(200)]
+
+def removenums(nums):
+        cur = nums[0]
+        count = 1
+        for i in nums[1:]:
+            if i == cur:
+                count += 1
+                if count >= 3:
+                    nums.remove(i)
+            else:
+                cur = i
+                count = 1
+        return len(nums)
+
+def f1():
+    sum =0
+    ll = [1 for i in range(100000)]
+    for i in ll:
+        sum += i
+
+def f2():
+    sum = 0
+    ll = [1 for i in range(100000)]
+    for i in ll[:]:
+        sum += i
+
+##print(timeit(f1,number =1))
+##print(timeit(f2,number =1))
+
+t = timeit(stmt="removenums(ll)", globals=globals())
+
+print(t)
